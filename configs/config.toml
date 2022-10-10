@@ -1,0 +1,30 @@
+[gravity]
+domain = "gravity"
+host = "0.0.0.0:4222"
+
+[subscriber]
+subscriberID = "jetstream_exporter"
+subscriberName = "JetStream Exporter"
+stateStore = "./statestore"
+workerCount = 4
+chunkSize = 2048
+verbose = true
+pipelineStart = 0
+pipelineEnd = -1
+
+# Authentication
+appID = "anonymous"
+accessKey = ""
+
+[initialLoad]
+enabled = true
+omittedCount = 100000
+
+[rules]
+subscription = "./settings/subscriptions.json"
+
+[jetstream]
+host = "0.0.0.0:4222"
+pingInterval = 10
+maxPingsOutstanding = 3
+maxReconnects = -1
